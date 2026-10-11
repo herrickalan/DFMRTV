@@ -25,6 +25,17 @@ test('retired services and the TV launch flow are removed', async () => {
   }
 });
 
+test('radio playback is HTTPS-only with no cleartext transport exceptions', async () => {
+  const appConfig = await read('app.json');
+  const stationConfig = await read('src/config.ts');
+  const environment = await read('.env.example');
+  assert.ok(environment.includes('EXPO_PUBLIC_DFM_STREAM_URL=https://'));
+  assert.ok(stationConfig.includes("startsWith('https://')"));
+  for (const insecureSetting of ['usesCleartextTraffic', 'NSAppTransportSecurity', 'NSTemporaryExceptionAllowsInsecureHTTPLoads']) {
+    assert.ok(!appConfig.includes(insecureSetting), `${insecureSetting} should not be present`);
+  }
+});
+
 test('the app exposes the four core station destinations', async () => {
   const app = await read('App.tsx');
   for (const label of ["'home'", "'live'", "'schedule'", "'more'"]) assert.ok(app.includes(label));

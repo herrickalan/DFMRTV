@@ -11,21 +11,16 @@
       "resizeMode": "contain",
       "backgroundColor": "#07111F"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "nu.dfm.mobile",
       "infoPlist": {
-        "UIBackgroundModes": ["audio"],
-        "NSAppTransportSecurity": {
-          "NSAllowsArbitraryLoadsInMedia": true,
-          "NSExceptionDomains": {
-            "dfm.nu": {
-              "NSIncludesSubdomains": true,
-              "NSTemporaryExceptionAllowsInsecureHTTPLoads": true
-            }
-          }
-        }
+        "UIBackgroundModes": [
+          "audio"
+        ]
       }
     },
     "android": {
@@ -34,17 +29,23 @@
         "backgroundColor": "#07111F"
       },
       "package": "nu.dfm.mobile",
-      "usesCleartextTraffic": true,
-      "permissions": ["INTERNET", "FOREGROUND_SERVICE", "FOREGROUND_SERVICE_MEDIA_PLAYBACK"],
-      "blockedPermissions": ["android.permission.RECORD_AUDIO"]
+      "permissions": ["INTERNET"],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "plugins": [
       [
         "expo-audio",
         {
-          "microphonePermission": false
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundRecording": false,
+          "enableBackgroundPlayback": true
         }
-      ]
+      ],
+      "expo-asset",
+      "expo-status-bar"
     ]
   }
 }

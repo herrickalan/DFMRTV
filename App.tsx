@@ -425,6 +425,11 @@ function AppShell() {
       .then((url) => {
         if (cancelled) return;
         player.replace(url);
+        player.setActiveForLockScreen(
+          true,
+          { title: 'DFM Live Radio', artist: station.name },
+          { isLiveStream: true, showSeekForward: false, showSeekBackward: false },
+        );
         setResolvedStreamUrl(url);
         setStreamError(false);
       })
