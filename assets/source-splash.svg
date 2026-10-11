@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1242" height="2436" viewBox="0 0 1242 2436">
+  <rect width="1242" height="2436" fill="#07111F"/>
+  <circle cx="1120" cy="390" r="420" fill="none" stroke="#46D7C8" stroke-opacity=".08" stroke-width="85"/>
+  <circle cx="70" cy="2180" r="500" fill="none" stroke="#FF5C5C" stroke-opacity=".08" stroke-width="95"/>
+  <g transform="translate(621 1180)">
+    <text x="0" y="0" fill="#F7FAFC" text-anchor="middle" font-size="310" font-family="Arial Black,Arial,sans-serif" font-style="italic" font-weight="900" letter-spacing="-34">DFM</text>
+    <path d="M-340 72 L340 72 L300 128 L-380 128 Z" fill="#FFD23F"/>
+    <text x="0" y="238" fill="#FF5C5C" text-anchor="middle" font-size="72" font-family="Arial,sans-serif" font-weight="900" letter-spacing="32">RTV</text>
+    <text x="0" y="318" fill="#93A4B8" text-anchor="middle" font-size="30" font-family="Arial,sans-serif" font-weight="700" letter-spacing="15">INTERNATIONAL</text>
+  </g>
+</svg>
